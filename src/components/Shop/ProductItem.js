@@ -4,11 +4,11 @@ import classes from './ProductItem.module.css';
 import { cartActions } from '../../store/MyCart';
 
 const ProductItem = (props) => {
-  const { title, price, description } = props;
+  const { id, title, price, description } = props;
   const dispatch = useDispatch();
 
-  function addToCart(title, description, price){
-    dispatch(cartActions.addItem(title, description, price))
+  function addToCart(id, title, description, price){
+    dispatch(cartActions.addItem(id, title, description, price))
   }
 
   return (
@@ -20,7 +20,7 @@ const ProductItem = (props) => {
         </header>
         <p>{description}</p>
         <div className={classes.actions}>
-          <button onClick={() => addToCart({title, description, price})}>Add to Cart</button>
+          <button onClick={() => addToCart({id, title, description, price})}>Add to Cart</button>
         </div>
       </Card>
     </li>
