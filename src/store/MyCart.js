@@ -22,7 +22,7 @@ const cartSlice = createSlice({
                 existingItem.totalPrice = existingItem.totalPrice + action.payload.price;
                 state.totalAmount = state.totalAmount + action.payload.price;
             } else {
-                state.items.push({
+                state.items.unshift({
                     id: action.payload.id,
                     title: action.payload.title,
                     price: action.payload.price,
